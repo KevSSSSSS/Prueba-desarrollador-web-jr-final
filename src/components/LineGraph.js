@@ -49,7 +49,7 @@ function LineGraph(props) {
             ctx.fillText(label, xPos, yPos);
         }
 
-    }, [props.data])
+    }, [props.data]) //cada vez que lleguen nuevos datos actualizar la grafica
     return (
         <canvas ref={canvasRef} width={800} height={200}></canvas>
     )
