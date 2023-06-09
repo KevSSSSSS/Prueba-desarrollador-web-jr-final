@@ -78,7 +78,7 @@ export const updateCurrentValue = async (name, value, date,  setThermometerState
 
 //Peticion Get de las puertas
 export const getDoors = async (setDataGraphState, setDataOriginal) => {
-    await fetch(baseURL + "doors")
+    await fetch(baseURL + "door")
         .then((response) => response.json())
         .then((data) => {
             //Validar que el array no devuelva un array vacio, en caso de que lo haga se asigna un array con los valores inciales
@@ -97,7 +97,7 @@ export const getDoors = async (setDataGraphState, setDataOriginal) => {
 //Peticion Post de las puertas
 export const postDoors = async (value, date) => {
     const form = { value: value ? (1) : (0), date: date };
-    await fetch(baseURL + "doors", {
+    await fetch(baseURL + "door", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
